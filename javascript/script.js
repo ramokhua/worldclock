@@ -41,7 +41,16 @@ function updateCity(event) {
   let cityName = cityTimeZone.replace("_", " ").split("/")[1];
   let cityTime = moment().tz(cityTimeZone);
   let citiesElement = document.querySelector(".container");
-  citiesElement.innerHTML += `
+  let selectedCityElement = document.querySelector("#selected-city");
+  
+  if (!selectedCityElement) { // Check for the existence of the #selected-city element
+    selectedCityElement = document.createElement("div");
+    selectedCityElement.id = "selected-city";
+    selectedCityElement.className = "city";
+    document.querySelector(".container").appendChild(selectedCityElement);
+  }
+
+  selectedCityElement.innerHTML += `
   <div class="city">
     <div>
       <h2>${cityName}</h2>
