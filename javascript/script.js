@@ -32,7 +32,6 @@ function updateTime() {
     gaboroneTimeElement.innerHTML = gaboroneTime.format("h:mm:ss [<small>]A[</small>]");
   }
 }
-
 function updateCity(event) {
   let cityTimeZone = event.target.value;
   if (cityTimeZone === "current") {
@@ -40,16 +39,28 @@ function updateCity(event) {
   }
   let cityName = cityTimeZone.replace("_", " ").split("/")[1];
   let cityTime = moment().tz(cityTimeZone);
-  let citiesElement = document.querySelector("#cities");
+  let citiesElement = document.querySelector(".cities");
+  
+  // Debug logs
+  console.log("Selected city time zone:", cityTimeZone);
+  console.log("Selected city name:", cityName);
+  console.log("Current time in selected city:", cityTime.format("MMMM Do YYYY, h:mm:ss A"));
+  
+  // Hide all cities
+  let allCities = document.querySelectorAll(".city");
+  allCities.forEach(city => {
+    city.style.display = 'none';
+  });
+  
+  // Display only the selected city
   citiesElement.innerHTML = `
-  <div class="city">
+  <div class="city" style="display:block;">
     <div>
       <h2>${cityName}</h2>
       <div class="date">${cityTime.format("MMMM Do YYYY")}</div>
     </div>
     <div class="time">${cityTime.format("h:mm:ss")} <small>${cityTime.format("A")}</small></div>
   </div>
-  <a href="/">All cities</a>
   `;
 }
 
