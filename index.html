@@ -6,6 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>World Clock</title>
         <link rel="stylesheet" href="css/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.37/moment-timezone-with-data-1970-2030.min.js"></script>
     </head>
     <body>
         <div class="container">
@@ -13,25 +15,26 @@
 
             <select>
                 <option value="">Select city</option>
+                <option value="current">My current location</option>
                 <option value="">Sydney</option>
                 <option value="">New York</option>
                 <option value="">Gaborone</option>
             </select>
 
-            <div class="city">
+            <div class="city" id="new-york">
                 <h2>New York 🇺🇸</h2>
-                <div class="date">February 5th 2025</div>
-                <div class="time">4:28:15 AM</div>
+                <div class="date"></div>
+                <div class="time"></div>
             </div>
-            <div class="city">
+            <div class="city" id="sydney">
                 <h2>Sydney 🇦🇺</h2>
-                <div class="date">February 5th 2025</div>
-                <div class="time">8:28:15 PM</div>
+                <div class="date"></div>
+                <div class="time"></div>
             </div>
-            <div class="city">
+            <div class="city" id="gaborone"> 
                 <h2>Gaborone 🇧🇼</h2>
-                <div class="date">February 5th 2025</div>
-                <div class="time">11:28:15 AM</div>
+                <div class="date"></div>
+                <div class="time"></div>
             </div>
         </div>
         <footer>
