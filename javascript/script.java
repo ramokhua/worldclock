@@ -2,14 +2,13 @@ function updateTime() {
   // new york
   let newYorkElement = document.querySelector("#new-york");
   if (newYorkElement) {
-    let newYorkDateElement = losAngelesElement.querySelector(".date");
-    let newYorkTimeElement = losAngelesElement.querySelector(".time");
+    let newYorkDateElement = newYorkElementElement.querySelector(".date");
+    let newYorkTimeElement = newYorkElementElement.querySelector(".time");
     let newYorkTime = moment().tz("America/New_York");
 
     losAngelesDateElement.innerHTML = newYorkTime.format("MMMM	Do YYYY");
     losAngelesTimeElement.innerHTML = newYorkTime.format(
-      "h:mm:ss [<small>]A[</small>]"
-    );
+      "h:mm:ss [<small>]A[</small>]");
   }
 
     //sydney
@@ -59,5 +58,5 @@ function updateCity(event) {
 updateTime();
 setInterval(updateTime, 1000);
 
-let citiesSelectElement = document.querySelector("#city");
+let citiesSelectElement = document.querySelector("#city-select");
 citiesSelectElement.addEventListener("change", updateCity);
