@@ -2,7 +2,7 @@
 
 This is a simple web-based application that displays the current time for various cities. It is designed to be easy to use and provides a quick way to check the time in different parts of the globe.
 
-##Status badge
+## Status badge
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/289f72c3-5d9f-43aa-99e4-763ad74fdd1b/deploy-status)](https://app.netlify.com/sites/world-clock-project-boitsholo/deploys)
 
